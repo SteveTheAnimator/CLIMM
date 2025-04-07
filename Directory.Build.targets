@@ -1,0 +1,9 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="ZipDebugOutput" AfterTargets="Build">
+    <MakeDir Directories="$(ProjectDir)bin\Debug\CLIMM" />
+    <Exec Command="powershell -Command &quot;Remove-Item -Force '$(ProjectDir)bin\Debug\CLIMM.zip'&quot;" Condition="Exists('$(ProjectDir)bin\Debug\CLIMM.zip')" />
+    <Exec Command="powershell -Command &quot;Compress-Archive -Path '$(ProjectDir)bin\Debug\*' -DestinationPath '$(ProjectDir)bin\Debug\CLIMM.zip'&quot;" /> 
+    <Message Text="Finished Building." Importance="high"/>
+  </Target>
+</Project>
