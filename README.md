@@ -1,4 +1,4 @@
-# ![CLIMM Logo](https://picsum.photos/200)  
+# ![CLIMM Logo](https://raw.githubusercontent.com/SteveTheAnimator/CLIMM/master/Images/climmlogo.png)  
 
 CLIMM is a command-line tool designed for the installation and management of mods for Unity games.  
 
@@ -28,7 +28,7 @@ Replace `<path-to-game-directory>` with your game's root directory path.
 
 > **Note**: Ensure the mod URL points to a valid GitHub repository or release page.  
 
-![CLIMM Demo](https://picsum.photos/200)
+![CLIMM Demo](https://raw.githubusercontent.com/SteveTheAnimator/CLIMM/master/Images/climmdemo.png)
 
 ## License  
 
