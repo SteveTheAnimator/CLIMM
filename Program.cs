@@ -22,7 +22,7 @@ class Program
             gamePathOption
         };
 
-        bepinexCommand.Handler = CommandHandler.Create<string>(InstallBepInEx);
+        bepinexCommand.Handler = CommandHandler.Create<string>(async (gamePath) => await InstallBepInEx(gamePath));
 
         var modCommand = new Command("install-mod", "Installs a mod from a GitHub URL")
         {
@@ -41,14 +41,14 @@ class Program
             modCommand
         };
 
-        rootCommand.Description = "CLI Mod Manager For Unity";
+        rootCommand.Description = "CLIMM";
 
         return rootCommand.InvokeAsync(args).Result;
     }
 
-    static async Task InstallBepInEx(string gamePath)
+    static async Task InstallBepInEx(string gamePath, string version = "5.4.23.2", string x = "64")
     {
-        string bepinexUrl = "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.2/BepInEx_win_x64_5.4.23.2.zip";
+        string bepinexUrl = $"https://github.com/BepInEx/BepInEx/releases/download/v{version}/BepInEx_win_x{x}_{version}.zip";
         string tempFile = Path.GetTempFileName();
 
         using (HttpClient client = new HttpClient())
@@ -104,7 +104,7 @@ class Program
         {
             string dirName = Path.GetFileName(dir).ToLowerInvariant();
 
-            if (dirName == "plugins" || dirName == "bepinex")
+            if (dirName == "plugins")
             {
                 string targetDir = dirName == "plugins" ? pluginsPath : bepinexPath;
 
