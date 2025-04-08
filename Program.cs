@@ -17,12 +17,30 @@ class Program
             IsRequired = true
         };
 
-        var bepinexCommand = new Command("install-bepinex", "Installs BepInEx")
+        var versionOption = new Option<string>(
+            "--bepinex-version",
+            description: "The bepinex version"
+        )
         {
-            gamePathOption
+            IsRequired = false
         };
 
-        bepinexCommand.Handler = CommandHandler.Create<string>(async (gamePath) => await InstallBepInEx(gamePath));
+        var xOption = new Option<string>(
+            "--x-version",
+            description: "Your PC thingy, x64 or x32"
+        )
+        {
+            IsRequired = false
+        };
+
+        var bepinexCommand = new Command("install-bepinex", "Installs BepInEx")
+        {
+            gamePathOption,
+            versionOption,
+            xOption,
+        };
+
+        bepinexCommand.Handler = CommandHandler.Create<string, string, string>(InstallBepInEx);
 
         var modCommand = new Command("install-mod", "Installs a mod from a GitHub URL")
         {
