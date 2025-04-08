@@ -1,8 +1,8 @@
-# CLIMM: Command-Line Interface Mod Manager for Unity Games
+# ![CLIMM Logo](https://picsum.photos/200)  
 
 CLIMM is a command-line tool designed for the installation and management of mods for Unity games.  
 
-## Features
+## Features  
 
 - **Install BepInEx**: Quickly set up the BepInEx modding framework for supported Unity games.  
 - **Install Mods from GitHub**: Seamlessly add mods directly from GitHub repositories to your Unity games.  
