@@ -26,7 +26,8 @@ Replace `<path-to-game-directory>` with your game's root directory path.
 - `<path-to-game-directory>`: Your game's root directory path.  
 - `<mod-github-url>`: Direct URL to the mod's GitHub repository or release.  
 
-> **Note**: Ensure the mod URL points to a valid GitHub repository or release page.  
+> [!NOTE]
+> Ensure the mod URL points to a valid GitHub repository or release page.  
 
 ![CLIMM Demo](https://raw.githubusercontent.com/SteveTheAnimator/CLIMM/master/Images/climmdemo.png)
 
