@@ -11,7 +11,8 @@ CLIMM is a command-line tool designed for the installation and management of mod
 
 - **.NET SDK**: CLIMM is built using the .NET SDK (8.0). Ensure it's installed on your system. Download it from the [.NET official website](https://dotnet.microsoft.com/download).  
 
-> **Note**: Ensure that the game directory you provide has write permissions, as CLIMM will modify files within the directory.  
+> [!NOTE]
+> Ensure that the game directory you provide has write permissions, as CLIMM will modify files within the directory.  
 
 ## Usage  
 
