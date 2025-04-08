@@ -1,8 +1,6 @@
-# CLIMM
+# ![CLIMM Logo](https://picsum.photos/200)  
 
 CLIMM is a command-line tool designed for the installation and management of mods for Unity games.  
-
-![CLIMM Logo](https://picsum.photos/200)  
 
 ## Features  
 
