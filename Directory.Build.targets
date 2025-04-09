@@ -6,4 +6,12 @@
     <Exec Command="powershell -Command &quot;Compress-Archive -Path '$(ProjectDir)bin\Debug\*' -DestinationPath '$(ProjectDir)bin\Debug\CLIMM.zip'&quot;" /> 
     <Message Text="Finished Building." Importance="high"/>
   </Target>
+	<Target Name="CreateInstaller" AfterTargets="Build">
+		<PropertyGroup>
+			<ISCCPath Condition="'$(ISCCPath)' == ''">C:\Program Files (x86)\Inno Setup 6\ISCC.exe</ISCCPath>
+			<InnoSetupScript>$(ProjectDir)climmiss.iss</InnoSetupScript>
+		</PropertyGroup>
+		<Message Text="Creating installer using Inno Setup..." Importance="high" />
+		<Exec Command="&quot;$(ISCCPath)&quot; &quot;$(InnoSetupScript)&quot;" />
+	</Target>
 </Project>
